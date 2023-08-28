@@ -9,8 +9,9 @@ def count_ways(steps: int) -> int:
             cache = recur(cache)
         return cache[-1]
 
+
 def recur(cache):
-    return  cache[1], cache[2], cache[1] + cache[2]
+    return cache[1], cache[2], cache[1] + cache[2]
 
 
 if __name__ == "__main__":
