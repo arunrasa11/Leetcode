@@ -5,14 +5,12 @@ def count_ways(steps: int) -> int:
     else:
         # return count_ways(steps-1) + count_ways(steps-2)
         cache = [0, 1, 2]
-
-        for i in range(3, steps+1):
+        for x in range(3, steps + 1):
             cache = recur(cache)
         return cache[-1]
 
-
 def recur(cache):
-    return cache[1], cache[2], cache[1] + cache[2]
+    return  cache[1], cache[2], cache[1] + cache[2]
 
 
 if __name__ == "__main__":
