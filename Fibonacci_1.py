@@ -1,20 +1,18 @@
-def fib(n:int) -> int:
+def recur(cache: list) -> int:
+    return cache[-1] + cache[-2]
+
+
+def fib(n: int) -> int:
 
     fib_series = [0, 1]
     for i in range(2, n):
+        fib_series.append(recur(fib_series))
 
-        # fib_series.append(recur(i, fib_series))
         # fn = lambda x, cache: cache[x-1] + cache[x-2]
         # fib_series.append(fn(i, fib_series))
+        #fib_series.append((lambda x, cache: cache[x - 1] + cache[x - 2])(i, fib_series))
 
-        fib_series.append((lambda x, cache: cache[x - 1] + cache[x - 2])(i, fib_series))
-
-    return fib_series[n-1]
-
-
-# def recur(n: int, cache: list) -> int:
-#
-#     return cache[n-1] + cache[n-2]
+    return fib_series[-1]
 
 
 def fib1(n: int) -> int:
