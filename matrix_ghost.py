@@ -18,8 +18,7 @@
 def solution(matrix):
     sum = 0
     x = len(matrix)
-
-
+    y = len(matrix[0])
 
     for i in range(y):
         for j in range(x):
